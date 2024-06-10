@@ -1,0 +1,22 @@
+/* BookSearchBar.css */
+.root {
+  margin-top: 50px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.textField {
+  width: 30%;
+  margin-right: 10px;
+}
+
+.button {
+  background-color: turquoise;
+  color: white;
+}
+@media only screen and (max-width: 768px) {
+    .textField {
+        width: 60%;
+      }
+}

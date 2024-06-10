@@ -1,13 +1,12 @@
-import React, { useState } from "react";
-import SearchBar from "./SearchBar";
-import BookSearchResults from "./BookSearchResults";
-import BookReadingList from "./BookReadingList";
-import BookItem from "./BookItem";
-import { useQuery, gql } from "@apollo/client"; // Import useQuery and gql from Apollo Client
+import React, { useState, useEffect } from 'react';
+import { useQuery, gql } from "@apollo/client";
+import BookSearchBar from './BookSearchBar';
+import BookSearchResults from './BookSearchResults';
+import BookReadingList from './BookReadingList';
 
-const SEARCH_BOOKS = gql`
-  query SearchBooks($searchTerm: String!) {
-    books(searchTerm: $searchTerm) {
+const FETCH_ALL_BOOKS = gql`
+  query {
+    books {
       title
       author
       coverPhotoURL
@@ -17,47 +16,52 @@ const SEARCH_BOOKS = gql`
 `;
 
 const BookAssignmentView = () => {
-  const [searchResults, setSearchResults] = useState([]);
-  const [readingList, setReadingList] = useState([]);
-  const [searchTerm, setSearchTerm] = useState(''); // Define searchTerm using useState hook
+  const [searchTerm, setSearchTerm] = useState('');
+  const [filteredBooks, setFilteredBooks] = useState([]);
+  const { loading, error, data } = useQuery(FETCH_ALL_BOOKS);
 
+  useEffect(() => {
+    if (data) {
+      const filtered = data.books.filter(book =>
+        book.title.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setFilteredBooks(filtered);
+    }
+  }, [data, searchTerm]);
 
+  console.log('Search term:', searchTerm); // Log the search term in BookAssignmentView
 
-  // Fetch book data from the backend using useQuery hook
-  const { loading, error, data } = useQuery(SEARCH_BOOKS, {
-    variables: { searchTerm },
-  });
-
-  // Function to handle search action
   const handleSearch = (searchTerm) => {
-    // Perform search logic here (e.g., fetch data from server)
-    console.log("Search term:", searchTerm);
-    // For demonstration, set search results to an empty array
-    setSearchResults([]);
+    setSearchTerm(searchTerm);
   };
 
-  // Function to add a book to the reading list
+  const [readingList, setReadingList] = useState([]);
+
   const handleAddToReadingList = (book) => {
-    // Add book to reading list
     setReadingList([...readingList, book]);
   };
 
-  // Function to remove a book from the reading list
   const handleRemoveFromReadingList = (book) => {
-    // Remove book from reading list
     setReadingList(readingList.filter((item) => item.title !== book.title));
   };
 
   return (
-    <div>
-      <SearchBar onSearch={handleSearch} />
-      <BookSearchResults searchResults={data ? data.books : []} loading={loading} error={error} />
-
-      <BookReadingList
-        readingList={readingList}
-        onRemoveFromReadingList={handleRemoveFromReadingList}
-      />
-    </div>
+    <>
+      <BookSearchBar onSearch={handleSearch} />
+      {searchTerm === '' ? ( // Render reading list directly if search term is empty
+        <BookReadingList
+          readingList={readingList}
+          onRemoveFromReadingList={handleRemoveFromReadingList}
+        />
+      ) : (
+        <BookSearchResults
+          searchResults={filteredBooks}
+          loading={loading}
+          error={error}
+          onAddToReadingList={handleAddToReadingList}
+        />
+      )}
+    </>
   );
 };
 

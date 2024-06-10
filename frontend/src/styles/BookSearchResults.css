@@ -1,0 +1,13 @@
+.book-search-results-container {
+    width: 100%;
+    max-height: 240px; /* Adjust max height as needed */
+    overflow-y: auto; /* Enable vertical scrolling */
+    margin: 0 auto; /* Center the component horizontally */
+  }
+  
+  .scroll-down-hint {
+    text-align: center;
+    margin-top: 20px;
+    color: gray;
+  }
+  
