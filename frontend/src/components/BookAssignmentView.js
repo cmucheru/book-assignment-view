@@ -48,19 +48,16 @@ const BookAssignmentView = () => {
   return (
     <>
       <BookSearchBar onSearch={handleSearch} />
-      {searchTerm === '' ? ( // Render reading list directly if search term is empty
-        <BookReadingList
-          readingList={readingList}
-          onRemoveFromReadingList={handleRemoveFromReadingList}
-        />
-      ) : (
-        <BookSearchResults
-          searchResults={filteredBooks}
-          loading={loading}
-          error={error}
-          onAddToReadingList={handleAddToReadingList}
-        />
-      )}
+      <BookSearchResults
+        searchResults={filteredBooks}
+        loading={loading}
+        error={error}
+        onAddToReadingList={handleAddToReadingList}
+      />
+      <BookReadingList
+        readingList={readingList}
+        onRemoveFromReadingList={handleRemoveFromReadingList}
+      />
     </>
   );
 };

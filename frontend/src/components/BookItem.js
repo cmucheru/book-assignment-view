@@ -1,27 +1,35 @@
 import React from "react";
 import { Card, CardContent, Typography, Button, CardMedia } from "@mui/material";
-import "../styles/BookItem.css";
+import "./BookItem.css"; // Ensure correct import path
 
 const BookItem = ({ book, onAddToReadingList }) => {
   return (
-    <Card key={`${book.title}-${book.author}`} variant="outlined" className="book-card">
+    <Card key={`${book.title}-${book.author}`} variant="outlined" className="book-item-card"
+     style={{border:'none'}}
+    >
       <CardMedia
         component="img"
-        className="media"
+        className="book-item-media"
         image={book.coverPhotoURL}
         alt={book.coverPhotoURL}
+        style={{ width: '32px', height: '32px' }} // Inline styles to set width and height
       />
-      <CardContent className="content">
-        <Typography variant="h5" component="h2" className="title">
+      <CardContent className="book-item-content">
+        <Typography variant="h5" component="h2" className="book-item-title"
+         style={{
+          color:'black',
+          fontFamily:'Mulish',
+          fontSize:'small',
+          margin:"4px 4px"
+         }}
+        >
           {book.title}
         </Typography>
-      
-       
         <Button
           onClick={() => onAddToReadingList(book)}
           variant="contained"
           color="primary"
-          className="button"
+          className="book-item-button"
         >
           Add to Reading List
         </Button>
