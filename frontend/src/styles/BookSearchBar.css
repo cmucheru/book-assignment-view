@@ -1,4 +1,19 @@
 /* BookSearchBar.css */
+.search-bar-container {
+  position: relative;
+}
+.search-bar-container .textField {
+  width: calc(100% - 1px); 
+}
+.search-bar-container .MuiIconButton-root {
+  position: absolute;
+  top: 50%;
+  right: 10px; 
+  transform: translateY(-50%);
+  font-size:large ;
+  /*color: #FFE6DC;*/
+  color: #F76434;
+}
 .root {
   margin-top: 50px;
   margin-bottom: 10px;
@@ -7,7 +22,6 @@
 }
 
 .textField {
-  width: 40%;
   margin-right: 10px;
 }
 

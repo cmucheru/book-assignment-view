@@ -1,5 +1,6 @@
 import React from "react";
 import { CustomScroll } from "react-custom-scroll";
+import { CircularProgress } from "@mui/material";
 import BookItem from "./BookItem";
 
 const BookSearchResults = ({
@@ -10,7 +11,7 @@ const BookSearchResults = ({
   readingList,
   searchTerm,
 }) => {
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <center><CircularProgress/></center>;
   if (error) return <p>Error: {error.message}</p>;
 
   if (!searchResults || searchResults.length === 0) {

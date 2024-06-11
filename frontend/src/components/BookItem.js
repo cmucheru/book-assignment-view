@@ -7,23 +7,14 @@ import {
   CardMedia,
 } from "@mui/material";
 import "../styles/BookItem.css";
+import { highlightText } from "../utils/highlightUtils";
 
-const highlightText = (text, highlight) => {
-  if (!highlight) {
-    return text;
-  }
-  const parts = text.split(new RegExp(`(${highlight})`, 'gi'));
-  return parts.map((part, index) =>
-    part.toLowerCase() === highlight.toLowerCase() ? (
-      <span key={index} style={{ backgroundColor: "#FABD33" }}>{part}</span>
-    ) : (
-      part
-    )
-  );
-};
+
 
 
 const BookItem = ({ book, onAddToReadingList, isInReadingList,searchTerm }) => {
+  const highlightedTitle = highlightText(book.title, searchTerm);
+
   return (
     <Card
       key={`${book.title}-${book.author}`}
@@ -51,7 +42,7 @@ const BookItem = ({ book, onAddToReadingList, isInReadingList,searchTerm }) => {
 
           }}
         >
-          {highlightText(book.title, searchTerm)}
+          {highlightedTitle}
           </Typography>
         <Button
           onClick={() => onAddToReadingList(book)}
@@ -62,9 +53,10 @@ const BookItem = ({ book, onAddToReadingList, isInReadingList,searchTerm }) => {
             fontFamily: "'Mulish', sans-serif",
             minWidth: "auto",
             padding: "6px 12px",
-            fontSize: "6px",
+            fontSize: "8px",
             width: "100px",
             color:"#FFFFFF",
+            fontWeight:'1000',
             backgroundColor: isInReadingList ? "#4AA088" : "#335c6e",
           }}
           disabled={isInReadingList}

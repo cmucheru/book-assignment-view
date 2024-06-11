@@ -1,6 +1,8 @@
 import React, { useState,useEffect } from "react";
-import { TextField } from "@mui/material";
+import { TextField,IconButton } from "@mui/material";
+import {FaTrash} from 'react-icons/fa';
 import "../styles/BookSearchBar.css";
+
 
 const BookSearchBar = ({ onSearch,bookTitles }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -33,8 +35,16 @@ const BookSearchBar = ({ onSearch,bookTitles }) => {
     onSearch(value.trim());
   };
 
+  const handleClearSearchQuery = () => {
+    setSearchTerm("");
+    onSearch(""); 
+  }
+
+
+
   return (
     <form className="root">
+      <div className="search-bar-container">
       <TextField
         className="textField"
         label="Search by title"
@@ -43,7 +53,16 @@ const BookSearchBar = ({ onSearch,bookTitles }) => {
         onChange={handleChange}
         onKeyDown={handleKeyDown}
         placeholder={autocompleteValue ? autocompleteValue : "Search by title"}
+        style={{
+          width:'300px'
+        }}
       />
+      {searchTerm &&   (<IconButton onClick={handleClearSearchQuery}>
+        <FaTrash />
+      </IconButton>)}
+      </div>
+
+     
     </form>
   );
 };
