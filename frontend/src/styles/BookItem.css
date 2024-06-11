@@ -1,6 +1,6 @@
 .book-item-card {
   width: 70%;
-  height: 40px;
+  height: 50px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -20,11 +20,17 @@
 }
 
 .book-item-title {
-  margin-top: 0;
   font-size: 8px;
   color: #335C6E;
   font-family: 'Mulish', sans-serif;
 }
+@media (max-width:353px){
+  .book-item-title{
+    margin-top:30px;
+    margin-bottom:2px;
+  }
+}
+
 
 .book-item-button {
   min-width: auto;
