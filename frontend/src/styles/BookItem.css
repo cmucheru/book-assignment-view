@@ -1,5 +1,5 @@
-.book-card {
-  width: 60%;
+.book-item-card {
+  width: 70%;
   height: 40px;
   margin: 0 auto;
   display: flex;
@@ -8,29 +8,31 @@
   border: none;
 }
 
-.media {
+.book-item-media {
   width: 32px;
   height: 32px;
 }
 
-.content {
-  flex: 1;
+.book-item-content {
   padding: 8px;
   display: flex;
   align-items: center;
 }
 
-.title {
-  margin-top: 20px; /* Remove the margin */
-  font-size: 15px; 
-  color: rgb(0, 123, 255);
+.book-item-title {
+  margin-top: 0;
+  font-size: 8px;
+  color: #5acccc;
 }
 
-.button {
+.book-item-button {
   min-width: auto;
   padding: 6px 12px;
-  font-size: 8px;
+  font-size: 6px;
   width: 100px;
-  margin-left: 20px;
-  margin-right:1px;
+  margin-top: 18px;
+  margin-bottom: 15px;
+  margin-left: 26px;
+  margin-right: 1px;
+  background-color: #335c6e;
 }

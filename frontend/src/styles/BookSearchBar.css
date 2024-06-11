@@ -7,7 +7,7 @@
 }
 
 .textField {
-  width: 30%;
+  width: 40%;
   margin-right: 10px;
 }
 
@@ -16,7 +16,7 @@
   color: white;
 }
 @media only screen and (max-width: 768px) {
-    .textField {
-        width: 60%;
-      }
+  .textField {
+    width: 60%;
+  }
 }

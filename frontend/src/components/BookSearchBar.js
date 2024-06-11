@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { TextField } from '@mui/material';
-import '../styles/BookSearchBar.css'; // Import CSS file
+import React, { useState } from "react";
+import { TextField } from "@mui/material";
+import "../styles/BookSearchBar.css";
 
 const BookSearchBar = ({ onSearch }) => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleChange = (event) => {
     const { value } = event.target;
@@ -12,13 +12,13 @@ const BookSearchBar = ({ onSearch }) => {
   };
 
   return (
-    <form className="root"> {/* Use className instead of style */}
-      <TextField 
-        className="textField" 
-        label="Search by title" 
-        variant="outlined" 
-        value={searchTerm} 
-        onChange={handleChange} 
+    <form className="root">
+      <TextField
+        className="textField"
+        label="Search by title"
+        variant="outlined"
+        value={searchTerm}
+        onChange={handleChange}
       />
     </form>
   );

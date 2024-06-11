@@ -5,7 +5,7 @@
   gap: 16px;
   margin-left: 20px;
   margin-right: 20px;
-  font-family: 'Mulish', sans-serif;
+  font-family: "Mulish", sans-serif;
 }
 
 .card {
@@ -17,13 +17,13 @@
 .title {
   color: #ffffff;
   font-size: 1rem;
-  font-family: 'Mulish', sans-serif;
+  font-family: "Mulish", sans-serif;
 }
 
 .author {
   color: #fabd33;
   font-size: 0.9rem;
-  font-family: 'Mulish', sans-serif;
+  font-family: "Mulish", sans-serif;
 }
 
 .button {
@@ -33,7 +33,7 @@
 }
 
 .button:hover {
-  background-color: #53C2C2;
+  background-color: #53c2c2;
 }
 
 @media only screen and (max-width: 900px) and (min-width: 770px) {
