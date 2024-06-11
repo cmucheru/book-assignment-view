@@ -1,58 +1,117 @@
 /* BookReadingList.css */
 .card-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-left: 20px;
-    margin-right: 20px;
-    font-family: 'Mulish', sans-serif;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family: 'Mulish', sans-serif;
+}
+
+.card {
+  margin-bottom: 10px;
+  background-color: #335c6e;
+  border: none;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: 'Mulish', sans-serif;
+}
+
+.author {
+  color: #fabd33;
+  font-size: 0.9rem;
+  font-family: 'Mulish', sans-serif;
+}
+
+.button {
+  background-color: #f76434;
+  color: #fff;
+  width: 250px;
+}
+
+.button:hover {
+  background-color: #53C2C2;
+}
+
+@media only screen and (max-width: 900px) and (min-width: 770px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
   .card {
     margin-bottom: 10px;
-    background-color: #335c6e;
-    border: none;
   }
-  
   .title {
-    color: #335C6E;
-    font-size: 1.2rem;
-    font-family: 'Mulish', sans-serif';
+    font-size: 1rem;
   }
-  
   .author {
-    color: #fabd33;
-    font-size: 0.9rem;
-    font-family: 'Mulish', sans-serif';
+    font-size: smaller;
   }
-  
   .button {
-    background-color: #f76434;
-    color: #fff;
+    width: 100%;
+    font-size: 0.75rem;
+    padding: 8px 12px;
   }
-  
-  @media only screen and (max-width: 768px) {
-    .card-container {
-      grid-template-columns: repeat(1, 1fr);
-    }
-    .card {
-      margin-bottom: 5px;
-    }
-    .title {
-      font-size: 0.5rem;
-    }
-    .author {
-      font-size: 0.8rem;
-    }
-    .button {
-      font-size: 0.8rem;
-      padding: 8px 12px;
-    }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 691px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  @media only screen and (min-width: 301px) and (max-width: 768px) {
-    .card-container {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  .card {
+    margin-bottom: 10px;
   }
-  
+  .title {
+    font-size: 1rem;
+  }
+  .author {
+    font-size: smaller;
+  }
+  .button {
+    width: 100%;
+    font-size: 0.75rem;
+    padding: 8px 12px;
+  }
+}
+
+@media only screen and (max-width: 690px) and (min-width: 470px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .card {
+    margin-bottom: 10px;
+  }
+  .title {
+    font-size: 1rem;
+  }
+  .author {
+    font-size: smaller;
+  }
+  .button {
+    width: 100%;
+    font-size: 0.75rem;
+    padding: 8px 12px;
+  }
+}
+
+@media only screen and (max-width: 469px) {
+  .card-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .card {
+    margin-bottom: 5px;
+  }
+  .title {
+    font-size: 1rem;
+  }
+  .author {
+    font-size: smaller;
+  }
+  .button {
+    width: 100%;
+    font-size: 0.75rem;
+    padding: 8px 12px;
+  }
+}

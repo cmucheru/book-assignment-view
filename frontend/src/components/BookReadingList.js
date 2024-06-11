@@ -7,7 +7,7 @@ import {
   Button,
   CardMedia,
 } from "@mui/material";
-import '../styles/BookReadingList.css';
+import './BookReadingList.css';
 
 const ReadingList = ({ readingList, onRemoveFromReadingList }) => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import BookItem from './BookItem';
-import '../styles/BookSearchResults.css'; // Import the CSS file
+import './BookSearchResults.css'; // Import the CSS file
 
 const BookSearchResults = ({ searchResults, loading, error, onAddToReadingList }) => {
   if (loading) return <p>Loading...</p>;

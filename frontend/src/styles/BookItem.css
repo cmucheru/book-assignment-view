@@ -21,17 +21,16 @@
 }
 
 .title {
-  margin-top: 0; /* Remove the margin */
-  font-size: 12px; /* Increase font size for better visibility */
-}
-
-.author {
-  margin: 0; /* Remove margin */
-  font-size: 10px; /* Adjust font size */
+  margin-top: 20px; /* Remove the margin */
+  font-size: 15px; 
+  color: rgb(0, 123, 255);
 }
 
 .button {
   min-width: auto;
   padding: 6px 12px;
-  font-size: 10px; /* Adjust font size */
+  font-size: 8px;
+  width: 100px;
+  margin-left: 20px;
+  margin-right:1px;
 }
