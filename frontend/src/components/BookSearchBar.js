@@ -29,8 +29,11 @@ const BookSearchBar = ({ onSearch, bookTitles }) => {
   };
 
   return (
-    <form className="root">
-      <div className="search-bar-container">
+    <form className="root"
+    style={{
+      marginTop:'40px'
+    }}
+    >
         <TextField
           className="textField"
           label="Search book title"
@@ -41,15 +44,14 @@ const BookSearchBar = ({ onSearch, bookTitles }) => {
             autocompleteValue ? autocompleteValue : "Search book title"
           }
           style={{
-            width: "300px",
+            width: "70%",
           }}
         />
         {searchTerm && (
-          <IconButton onClick={handleClearSearchQuery}>
+          <IconButton onClick={handleClearSearchQuery} className="clear-button">
             <span>X</span>
           </IconButton>
         )}
-      </div>
     </form>
   );
 };
