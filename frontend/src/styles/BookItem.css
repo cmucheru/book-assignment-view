@@ -21,22 +21,21 @@
 
 .book-item-title {
   font-size: 8px;
-  color: #335C6E;
-  font-family: 'Mulish', sans-serif;
+  color: #335c6e;
+  font-family: "Mulish", sans-serif;
 }
-@media (max-width:353px){
-  .book-item-title{
-    margin-top:30px;
-    margin-bottom:2px;
+@media (max-width: 353px) {
+  .book-item-title {
+    margin-top: 30px;
+    margin-bottom: 2px;
   }
 }
-
 
 .book-item-button {
   min-width: auto;
   padding: 6px 12px;
   font-size: 6px;
-  font-family: 'Mulish', sans-serif;
+  font-family: "Mulish", sans-serif;
   width: 100px;
   margin-top: 18px;
   margin-bottom: 15px;

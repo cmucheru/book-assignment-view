@@ -9,10 +9,12 @@ import {
 import "../styles/BookItem.css";
 import { highlightText } from "../utils/highlightUtils";
 
-
-
-
-const BookItem = ({ book, onAddToReadingList, isInReadingList,searchTerm }) => {
+const BookItem = ({
+  book,
+  onAddToReadingList,
+  isInReadingList,
+  searchTerm,
+}) => {
   const highlightedTitle = highlightText(book.title, searchTerm);
 
   return (
@@ -37,13 +39,11 @@ const BookItem = ({ book, onAddToReadingList, isInReadingList,searchTerm }) => {
           style={{
             fontFamily: "'Mulish', sans-serif",
             fontSize: "12px",
-            marginRight:"6px",
-           
-
+            marginRight: "6px",
           }}
         >
           {highlightedTitle}
-          </Typography>
+        </Typography>
         <Button
           onClick={() => onAddToReadingList(book)}
           variant="contained"
@@ -55,8 +55,8 @@ const BookItem = ({ book, onAddToReadingList, isInReadingList,searchTerm }) => {
             padding: "6px 12px",
             fontSize: "8px",
             width: "100px",
-            color:"#FFFFFF",
-            fontWeight:'1000',
+            color: "#FFFFFF",
+            fontWeight: "1000",
             backgroundColor: isInReadingList ? "#4AA088" : "#335c6e",
           }}
           disabled={isInReadingList}

@@ -18,9 +18,9 @@ const ReadingList = ({ readingList, onRemoveFromReadingList }) => {
           variant="outlined"
           className="card"
           style={{
-            marginBottom: '10px',
-            backgroundColor: '#335c6e',
-            border: 'none',
+            marginBottom: "10px",
+            backgroundColor: "#335c6e",
+            border: "none",
           }}
         >
           <CardMedia
@@ -30,28 +30,33 @@ const ReadingList = ({ readingList, onRemoveFromReadingList }) => {
             alt={book.title}
           />
           <CardContent>
-            <Typography variant="h5" component="h2" className="title"
-            style={{
-              fontFamily: '"Mulish", sans-serif'
-            }}
+            <Typography
+              variant="h5"
+              component="h2"
+              className="title"
+              style={{
+                fontFamily: '"Mulish", sans-serif',
+              }}
             >
               {book.title}
             </Typography>
-            <Typography color="textSecondary" className="author"
-            style={{
-              color: '#fabd33',
-              fontSize: '0.9rem',
-              fontFamily: '"Mulish", sans-serif',
-            }}
-            
+            <Typography
+              color="textSecondary"
+              className="author"
+              style={{
+                color: "#fabd33",
+                fontSize: "0.9rem",
+                fontFamily: '"Mulish", sans-serif',
+              }}
             >
               Author: {book.author}
             </Typography>
-            <Typography color="textSecondary"
-             style={{
-              color:'#FFE6DC',
-              fontFamily: '"Mulish", sans-serif',
-             }}
+            <Typography
+              color="textSecondary"
+              style={{
+                color: "#FFE6DC",
+                fontFamily: '"Mulish", sans-serif',
+              }}
             >
               Reading Level: {book.readingLevel}
             </Typography>
@@ -61,11 +66,10 @@ const ReadingList = ({ readingList, onRemoveFromReadingList }) => {
               color="secondary"
               className="button"
               style={{
-                backgroundColor: '#f76434',
-                color: '#fff',
-                width: '250px',
+                backgroundColor: "#f76434",
+                color: "#fff",
+                width: "250px",
                 fontFamily: '"Mulish", sans-serif',
-
               }}
             >
               Remove from Reading List

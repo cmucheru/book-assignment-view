@@ -1,7 +1,9 @@
 import React from "react";
 import { render, screen, waitFor, fireEvent } from "@testing-library/react";
-import { MockedProvider, MyMockedProvider } from "./MockedProvider"; 
-import BookAssignmentView, { FETCH_ALL_BOOKS } from "../components/BookAssignmentView";
+import { MockedProvider, MyMockedProvider } from "./MockedProvider";
+import BookAssignmentView, {
+  FETCH_ALL_BOOKS,
+} from "../components/BookAssignmentView";
 
 const mocks = [
   {

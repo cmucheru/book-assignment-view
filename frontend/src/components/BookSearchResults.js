@@ -11,7 +11,12 @@ const BookSearchResults = ({
   readingList,
   searchTerm,
 }) => {
-  if (loading) return <center><CircularProgress/></center>;
+  if (loading)
+    return (
+      <center>
+        <CircularProgress />
+      </center>
+    );
   if (error) return <p>Error: {error.message}</p>;
 
   if (!searchResults || searchResults.length === 0) {
