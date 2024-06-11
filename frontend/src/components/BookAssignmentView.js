@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { useQuery, gql } from "@apollo/client";
-import BookSearchBar from './BookSearchBar';
-import BookSearchResults from './BookSearchResults';
-import BookReadingList from './BookReadingList';
+import BookSearchBar from "./BookSearchBar";
+import BookSearchResults from "./BookSearchResults";
+import BookReadingList from "./BookReadingList";
 
 const FETCH_ALL_BOOKS = gql`
   query {
@@ -16,20 +16,20 @@ const FETCH_ALL_BOOKS = gql`
 `;
 
 const BookAssignmentView = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [filteredBooks, setFilteredBooks] = useState([]);
   const { loading, error, data } = useQuery(FETCH_ALL_BOOKS);
 
   useEffect(() => {
     if (data) {
-      const filtered = data.books.filter(book =>
+      const filtered = data.books.filter((book) =>
         book.title.toLowerCase().includes(searchTerm.toLowerCase())
       );
       setFilteredBooks(filtered);
     }
   }, [data, searchTerm]);
 
-  console.log('Search term:', searchTerm); // Log the search term in BookAssignmentView
+  console.log("Search term:", searchTerm);
 
   const handleSearch = (searchTerm) => {
     setSearchTerm(searchTerm);
@@ -48,12 +48,14 @@ const BookAssignmentView = () => {
   return (
     <>
       <BookSearchBar onSearch={handleSearch} />
-      <BookSearchResults
-        searchResults={filteredBooks}
-        loading={loading}
-        error={error}
-        onAddToReadingList={handleAddToReadingList}
-      />
+      {searchTerm !== "" && ( // Show BookSearchResults only if searchTerm is not empty
+        <BookSearchResults
+          searchResults={filteredBooks}
+          loading={loading}
+          error={error}
+          onAddToReadingList={handleAddToReadingList}
+        />
+      )}
       <BookReadingList
         readingList={readingList}
         onRemoveFromReadingList={handleRemoveFromReadingList}

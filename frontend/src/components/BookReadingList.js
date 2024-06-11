@@ -7,17 +7,21 @@ import {
   Button,
   CardMedia,
 } from "@mui/material";
-import './BookReadingList.css';
+import "../styles/BookReadingList.css";
 
 const ReadingList = ({ readingList, onRemoveFromReadingList }) => {
   return (
     <div className="card-container">
-      {readingList.map((book) => (
-        <Card key={book.title} variant="outlined" className="card">
+      {readingList.map((book, index) => (
+        <Card
+          key={`${book.title}-${book.author}-${index}`}
+          variant="outlined"
+          className="card"
+        >
           <CardMedia
             component="img"
             height="200"
-            image={book.coverPhotoURL} // Assuming each book object has a coverPhotoURL property
+            image={book.coverPhotoURL}
             alt={book.title}
           />
           <CardContent>
