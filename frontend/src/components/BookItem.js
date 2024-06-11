@@ -39,6 +39,17 @@ const BookItem = ({ book, onAddToReadingList }) => {
           variant="contained"
           color="primary"
           className="book-item-button"
+        style={{
+          minWidth: 'auto',
+          padding: '6px 12px',
+          fontSize: '6px',
+          width: '100px',
+          marginTop: '18px',
+          marginBottom: '15px',
+          marginLeft: '26px',
+          marginRight: '1px',
+          backgroundColor: '#335c6e',
+        }}
         >
           Add to Reading List
         </Button>

@@ -17,6 +17,11 @@ const ReadingList = ({ readingList, onRemoveFromReadingList }) => {
           key={`${book.title}-${book.author}-${index}`}
           variant="outlined"
           className="card"
+          style={{
+            marginBottom: '10px',
+            backgroundColor: '#335c6e',
+            border: 'none',
+          }}
         >
           <CardMedia
             component="img"
@@ -28,7 +33,14 @@ const ReadingList = ({ readingList, onRemoveFromReadingList }) => {
             <Typography variant="h5" component="h2" className="title">
               {book.title}
             </Typography>
-            <Typography color="textSecondary" className="author">
+            <Typography color="textSecondary" className="author"
+            style={{
+              color: '#fabd33',
+              fontSize: '0.9rem',
+              fontFamily: '"Mulish", sans-serif',
+            }}
+            
+            >
               Author: {book.author}
             </Typography>
             <Typography color="textSecondary">
@@ -39,6 +51,11 @@ const ReadingList = ({ readingList, onRemoveFromReadingList }) => {
               variant="contained"
               color="secondary"
               className="button"
+              style={{
+                backgroundColor: '#f76434',
+                color: '#fff',
+                width: '250px',
+              }}
             >
               Remove from Reading List
             </Button>
