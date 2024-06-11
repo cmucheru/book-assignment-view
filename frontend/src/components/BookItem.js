@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import "../styles/BookItem.css";
 
-const BookItem = ({ book, onAddToReadingList }) => {
+const BookItem = ({ book, onAddToReadingList,isInReadingList }) => {
   return (
     <Card
       key={`${book.title}-${book.author}`}
@@ -39,6 +39,7 @@ const BookItem = ({ book, onAddToReadingList }) => {
           variant="contained"
           color="primary"
           className="book-item-button"
+          disabled={isInReadingList}
         style={{
           minWidth: 'auto',
           padding: '6px 12px',
@@ -48,10 +49,11 @@ const BookItem = ({ book, onAddToReadingList }) => {
           marginBottom: '15px',
           marginLeft: '26px',
           marginRight: '1px',
-          backgroundColor: '#335c6e',
+          color:'#FFFFFF',
+          backgroundColor: isInReadingList ? '#4AA088':'#335c6e',
         }}
         >
-          Add to Reading List
+          {isInReadingList?"Added to List":"Add to Reading List"}
         </Button>
       </CardContent>
     </Card>

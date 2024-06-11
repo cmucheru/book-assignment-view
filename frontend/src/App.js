@@ -19,7 +19,7 @@ const authLink = setContext((_, { headers }) => {
     headers: {
       ...headers,
       "Content-Type": "application/json",
-      "x-apollo-operation-name": "BookSearch", // Necessary header to bypass CSRF protection
+      "x-apollo-operation-name": "BookSearch",
     },
   };
 });

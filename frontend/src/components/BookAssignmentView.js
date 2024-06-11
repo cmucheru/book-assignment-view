@@ -38,9 +38,10 @@ const BookAssignmentView = () => {
   const [readingList, setReadingList] = useState([]);
 
   const handleAddToReadingList = (book) => {
-    setReadingList([...readingList, book]);
+    if (!readingList.some((item) => item.title === book.title)) {
+      setReadingList([...readingList, book]);
+    }
   };
-
   const handleRemoveFromReadingList = (book) => {
     setReadingList(readingList.filter((item) => item.title !== book.title));
   };
@@ -54,6 +55,7 @@ const BookAssignmentView = () => {
           loading={loading}
           error={error}
           onAddToReadingList={handleAddToReadingList}
+          readingList={readingList}
         />
       )}
       <BookReadingList

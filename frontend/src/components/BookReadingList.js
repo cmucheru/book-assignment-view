@@ -30,7 +30,11 @@ const ReadingList = ({ readingList, onRemoveFromReadingList }) => {
             alt={book.title}
           />
           <CardContent>
-            <Typography variant="h5" component="h2" className="title">
+            <Typography variant="h5" component="h2" className="title"
+            style={{
+              fontFamily: '"Mulish", sans-serif'
+            }}
+            >
               {book.title}
             </Typography>
             <Typography color="textSecondary" className="author"
@@ -43,7 +47,12 @@ const ReadingList = ({ readingList, onRemoveFromReadingList }) => {
             >
               Author: {book.author}
             </Typography>
-            <Typography color="textSecondary">
+            <Typography color="textSecondary"
+             style={{
+              color:'#FFE6DC',
+              fontFamily: '"Mulish", sans-serif',
+             }}
+            >
               Reading Level: {book.readingLevel}
             </Typography>
             <Button
@@ -55,6 +64,8 @@ const ReadingList = ({ readingList, onRemoveFromReadingList }) => {
                 backgroundColor: '#f76434',
                 color: '#fff',
                 width: '250px',
+                fontFamily: '"Mulish", sans-serif',
+
               }}
             >
               Remove from Reading List

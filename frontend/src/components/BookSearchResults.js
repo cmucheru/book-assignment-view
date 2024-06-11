@@ -7,6 +7,7 @@ const BookSearchResults = ({
   loading,
   error,
   onAddToReadingList,
+  readingList,
 }) => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
@@ -31,6 +32,8 @@ const BookSearchResults = ({
             key={`${book.title}-${book.author}`}
             book={book}
             onAddToReadingList={onAddToReadingList}
+            isInReadingList={readingList.some((item) => item.title === book.title)} 
+            
           />
         ))}
       </CustomScroll>
