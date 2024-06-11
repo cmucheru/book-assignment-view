@@ -51,10 +51,11 @@ const BookAssignmentView = () => {
       )
     );
   };
+  const bookTitles = data ? data.books.map((book) => book.title) : [];
 
   return (
     <>
-      <BookSearchBar onSearch={handleSearch} />
+      <BookSearchBar onSearch={handleSearch} bookTitles={bookTitles} />
       {searchTerm !== "" && (
         <BookSearchResults
           searchResults={filteredBooks}
@@ -62,6 +63,7 @@ const BookAssignmentView = () => {
           error={error}
           onAddToReadingList={handleAddToReadingList}
           readingList={readingList}
+          searchTerm={searchTerm}
         />
       )}
       <BookReadingList

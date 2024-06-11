@@ -8,6 +8,7 @@ const BookSearchResults = ({
   error,
   onAddToReadingList,
   readingList,
+  searchTerm,
 }) => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
@@ -37,6 +38,7 @@ const BookSearchResults = ({
               book={book}
               onAddToReadingList={onAddToReadingList}
               isInReadingList={isInReadingList}
+              searchTerm={searchTerm}
             />
           );
         })}

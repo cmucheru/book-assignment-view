@@ -8,7 +8,22 @@ import {
 } from "@mui/material";
 import "../styles/BookItem.css";
 
-const BookItem = ({ book, onAddToReadingList, isInReadingList }) => {
+const highlightText = (text, highlight) => {
+  if (!highlight) {
+    return text;
+  }
+  const parts = text.split(new RegExp(`(${highlight})`, 'gi'));
+  return parts.map((part, index) =>
+    part.toLowerCase() === highlight.toLowerCase() ? (
+      <span key={index} style={{ backgroundColor: "#FABD33" }}>{part}</span>
+    ) : (
+      part
+    )
+  );
+};
+
+
+const BookItem = ({ book, onAddToReadingList, isInReadingList,searchTerm }) => {
   return (
     <Card
       key={`${book.title}-${book.author}`}
@@ -36,8 +51,8 @@ const BookItem = ({ book, onAddToReadingList, isInReadingList }) => {
 
           }}
         >
-          {book.title}
-        </Typography>
+          {highlightText(book.title, searchTerm)}
+          </Typography>
         <Button
           onClick={() => onAddToReadingList(book)}
           variant="contained"
