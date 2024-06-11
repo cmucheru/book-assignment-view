@@ -51,7 +51,7 @@ const BookItem = ({ book, onAddToReadingList, isInReadingList }) => {
           }}
           disabled={isInReadingList}
         >
-          {isInReadingList ? "Added to Reading List" : "Add to Reading List"}
+          {isInReadingList ? "Added to List" : "Add to Reading List"}
         </Button>
       </CardContent>
     </Card>
