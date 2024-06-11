@@ -31,6 +31,8 @@ const BookItem = ({ book, onAddToReadingList, isInReadingList }) => {
           style={{
             fontFamily: "'Mulish', sans-serif",
             fontSize: "12px",
+            marginRight:"6px",
+
           }}
         >
           {book.title}
