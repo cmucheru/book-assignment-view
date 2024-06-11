@@ -27,15 +27,19 @@ const BookSearchResults = ({
       }}
     >
       <CustomScroll>
-        {searchResults.map((book) => (
-          <BookItem
-            key={`${book.title}-${book.author}`}
-            book={book}
-            onAddToReadingList={onAddToReadingList}
-            isInReadingList={readingList.some((item) => item.title === book.title)} 
-            
-          />
-        ))}
+        {searchResults.map((book) => {
+          const isInReadingList = readingList.some(
+            (item) => item.title === book.title && item.author === book.author
+          );
+          return (
+            <BookItem
+              key={`${book.title}-${book.author}`}
+              book={book}
+              onAddToReadingList={onAddToReadingList}
+              isInReadingList={isInReadingList}
+            />
+          );
+        })}
       </CustomScroll>
     </div>
   );

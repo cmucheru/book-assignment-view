@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import "../styles/BookItem.css";
 
-const BookItem = ({ book, onAddToReadingList,isInReadingList }) => {
+const BookItem = ({ book, onAddToReadingList, isInReadingList }) => {
   return (
     <Card
       key={`${book.title}-${book.author}`}
@@ -29,6 +29,7 @@ const BookItem = ({ book, onAddToReadingList,isInReadingList }) => {
           component="h2"
           className="book-item-title"
           style={{
+            fontFamily: "'Mulish', sans-serif",
             fontSize: "12px",
           }}
         >
@@ -39,21 +40,18 @@ const BookItem = ({ book, onAddToReadingList,isInReadingList }) => {
           variant="contained"
           color="primary"
           className="book-item-button"
+          style={{
+            fontFamily: "'Mulish', sans-serif",
+            minWidth: "auto",
+            padding: "6px 12px",
+            fontSize: "6px",
+            width: "100px",
+            color:"#FFFFFF",
+            backgroundColor: isInReadingList ? "#4AA088" : "#335c6e",
+          }}
           disabled={isInReadingList}
-        style={{
-          minWidth: 'auto',
-          padding: '6px 12px',
-          fontSize: '6px',
-          width: '100px',
-          marginTop: '18px',
-          marginBottom: '15px',
-          marginLeft: '26px',
-          marginRight: '1px',
-          color:'#FFFFFF',
-          backgroundColor: isInReadingList ? '#4AA088':'#335c6e',
-        }}
         >
-          {isInReadingList?"Added to List":"Add to Reading List"}
+          {isInReadingList ? "Added to Reading List" : "Add to Reading List"}
         </Button>
       </CardContent>
     </Card>

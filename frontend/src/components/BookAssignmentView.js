@@ -29,8 +29,6 @@ const BookAssignmentView = () => {
     }
   }, [data, searchTerm]);
 
-  console.log("Search term:", searchTerm);
-
   const handleSearch = (searchTerm) => {
     setSearchTerm(searchTerm);
   };
@@ -38,18 +36,26 @@ const BookAssignmentView = () => {
   const [readingList, setReadingList] = useState([]);
 
   const handleAddToReadingList = (book) => {
-    if (!readingList.some((item) => item.title === book.title)) {
+    const isBookInList = readingList.some(
+      (item) => item.title === book.title && item.author === book.author
+    );
+    if (!isBookInList) {
       setReadingList([...readingList, book]);
     }
   };
+
   const handleRemoveFromReadingList = (book) => {
-    setReadingList(readingList.filter((item) => item.title !== book.title));
+    setReadingList(
+      readingList.filter(
+        (item) => item.title !== book.title || item.author !== book.author
+      )
+    );
   };
 
   return (
     <>
       <BookSearchBar onSearch={handleSearch} />
-      {searchTerm !== "" && ( // Show BookSearchResults only if searchTerm is not empty
+      {searchTerm !== "" && (
         <BookSearchResults
           searchResults={filteredBooks}
           loading={loading}
