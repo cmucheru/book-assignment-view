@@ -68,7 +68,7 @@ const ReadingList = ({ readingList, onRemoveFromReadingList }) => {
               style={{
                 backgroundColor: "#f76434",
                 color: "#ffffff",
-                width: "250px",
+                width: "200px",
                 fontFamily: '"Mulish", sans-serif',
               }}
             >
