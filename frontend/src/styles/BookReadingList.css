@@ -29,7 +29,6 @@
 .button {
   background-color: #f76434;
   color: #fff;
-  width: 250px;
 }
 
 .button:hover {
@@ -117,8 +116,9 @@
 }
 @media only screen and (max-width: 550px) and (min-width: 470px) {
   .button {
-    width: 100%;
+    width: 80%;
     font-size: 0.75rem;
     padding: 8px 20px;
+    margin-right: 10px;
   }
 }
