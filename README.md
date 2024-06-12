@@ -1,8 +1,12 @@
 # Installation and Running the Application
+## Clone the repository:
+```bash
+git clone https://github.com/cmucheru/book-assignment-view.git
+```
 ## Backend Setup
 1. Navigate to the backend directory:
 ```bash
-cd src/backend
+cd book-assignment-view/backend
 ```
 
 2. Install the necessary packages:
@@ -16,7 +20,7 @@ npm start
 ### Frontend Setup
 1. Navigate to the frontend directory:
 ```bash
-cd src/frontend
+cd book-assignment-view/frontend
 ```
 2. Install the necessary packages:
 ```bash
@@ -38,3 +42,5 @@ npm run build
 ```
 ###
 You need internet connection to load images properly.
+### 
+A hosted site is available at [https://book-assignment-view.onrender.com/](url) *** hosted server downtime may drag search results.
