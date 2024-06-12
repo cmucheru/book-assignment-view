@@ -31,6 +31,9 @@ const BookSearchResults = ({
         width: "100%",
         margin: "0 auto",
         overflowY: "auto",
+        backgroundColor: "white",
+        position: "relative",
+        zIndex: 2,
       }}
     >
       <CustomScroll>

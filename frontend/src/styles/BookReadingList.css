@@ -3,8 +3,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  margin-left: 20px;
-  margin-right: 20px;
+
   font-family: "Mulish", sans-serif;
 }
 
@@ -12,6 +11,7 @@
   margin-bottom: 10px;
   background-color: #335c6e;
   border: none;
+  
 }
 
 .title {

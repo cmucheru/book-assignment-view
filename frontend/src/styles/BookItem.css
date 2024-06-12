@@ -6,11 +6,13 @@
   align-items: center;
   justify-content: space-between;
   border: none;
+  background-color: white;
 }
 
 .book-item-media {
   width: 32px;
   height: 32px;
+
 }
 
 .book-item-content {

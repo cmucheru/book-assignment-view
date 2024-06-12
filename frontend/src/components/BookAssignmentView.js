@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useQuery, gql } from "@apollo/client";
+import Stack from "@mui/material/Stack";
+
 import BookSearchBar from "./BookSearchBar";
 import BookSearchResults from "./BookSearchResults";
 import BookReadingList from "./BookReadingList";
@@ -56,20 +58,35 @@ const BookAssignmentView = () => {
   return (
     <>
       <BookSearchBar onSearch={handleSearch} bookTitles={bookTitles} />
-      {searchTerm !== "" && (
-        <BookSearchResults
-          searchResults={filteredBooks}
-          loading={loading}
-          error={error}
-          onAddToReadingList={handleAddToReadingList}
+      <Stack
+        spacing={-18}
+        sx={{
+          position: "relative",
+        }}
+      >
+        {searchTerm !== "" && (
+          <BookSearchResults
+            searchResults={filteredBooks}
+            loading={loading}
+            error={error}
+            onAddToReadingList={handleAddToReadingList}
+            readingList={readingList}
+            searchTerm={searchTerm}
+            sx={{
+              position: "relative",
+              zIndex: 2,
+            }}
+          />
+        )}
+        <BookReadingList
           readingList={readingList}
-          searchTerm={searchTerm}
+          onRemoveFromReadingList={handleRemoveFromReadingList}
+          sx={{
+            position: "relative",
+            zIndex: 1,
+          }}
         />
-      )}
-      <BookReadingList
-        readingList={readingList}
-        onRemoveFromReadingList={handleRemoveFromReadingList}
-      />
+      </Stack>
     </>
   );
 };

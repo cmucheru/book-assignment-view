@@ -11,7 +11,12 @@ import "../styles/BookReadingList.css";
 
 const ReadingList = ({ readingList, onRemoveFromReadingList }) => {
   return (
-    <div className="card-container">
+    <div
+      className="card-container"
+      style={{
+        zIndex: 1,
+      }}
+    >
       {readingList.map((book, index) => (
         <Card
           key={`${book.title}-${book.author}-${index}`}
@@ -21,13 +26,17 @@ const ReadingList = ({ readingList, onRemoveFromReadingList }) => {
             marginBottom: "10px",
             backgroundColor: "#335c6e",
             border: "none",
+            marginLeft: "20px",
+            marginRight: "20px",
+            marginTop: "20px",
           }}
         >
           <CardMedia
             component="img"
-            height="200"
+            
             image={book.coverPhotoURL}
             alt={book.title}
+          
           />
           <CardContent>
             <Typography

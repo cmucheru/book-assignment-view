@@ -29,29 +29,30 @@ const BookSearchBar = ({ onSearch, bookTitles }) => {
   };
 
   return (
-    <form className="root"
-    style={{
-      marginTop:'40px'
-    }}
+    <form
+      className="root"
+      style={{
+        marginTop: "40px",
+      }}
     >
-        <TextField
-          className="textField"
-          label="Search book title"
-          variant="outlined"
-          value={searchTerm}
-          onChange={handleChange}
-          placeholder={
-            autocompleteValue ? autocompleteValue : "Search book title"
-          }
-          style={{
-            width: "70%",
-          }}
-        />
-        {searchTerm && (
-          <IconButton onClick={handleClearSearchQuery} className="clear-button">
-            <span>X</span>
-          </IconButton>
-        )}
+      <TextField
+        className="textField"
+        label="Search book title"
+        variant="outlined"
+        value={searchTerm}
+        onChange={handleChange}
+        placeholder={
+          autocompleteValue ? autocompleteValue : "Search book title"
+        }
+        style={{
+          width: "70%",
+        }}
+      />
+      {searchTerm && (
+        <IconButton onClick={handleClearSearchQuery} className="clear-button">
+          <span>X</span>
+        </IconButton>
+      )}
     </form>
   );
 };

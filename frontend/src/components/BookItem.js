@@ -22,7 +22,12 @@ const BookItem = ({
       key={`${book.title}-${book.author}`}
       variant="outlined"
       className="book-item-card"
-      style={{ border: "none" }}
+      style={{
+        border: "none",
+        backgroundColor: "white",
+        position: "relative",
+        zIndex: 3,
+      }}
     >
       <CardMedia
         component="img"
@@ -40,6 +45,7 @@ const BookItem = ({
             fontFamily: "'Mulish', sans-serif",
             fontSize: "12px",
             marginRight: "6px",
+            fontWeight:"bold"
           }}
         >
           {highlightedTitle}
@@ -55,9 +61,10 @@ const BookItem = ({
             padding: "6px 12px",
             fontSize: "8px",
             width: "100px",
-            color: "#FFFFFF",
+            color: isInReadingList ? "black":"#FFFFFF",
             fontWeight: "1000",
-            backgroundColor: isInReadingList ? "#4AA088" : "#335c6e",
+
+            backgroundColor: isInReadingList ? "#FABD33" : "#335c6e",
           }}
           disabled={isInReadingList}
         >
