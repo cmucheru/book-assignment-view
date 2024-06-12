@@ -10,7 +10,7 @@ import "./App.css";
 import BookAssignmentView from "./components/BookAssignmentView";
 
 const httpLink = createHttpLink({
-  uri: "http://localhost:4000/",
+  uri: "https://book-assignment-view-be.onrender.com/",
   credentials: "same-origin",
 });
 
