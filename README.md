@@ -43,4 +43,4 @@ npm run build
 ###
 You need internet connection to load images properly.
 ### 
-A hosted site is available at [https://book-assignment-view.onrender.com/](url) *** hosted server downtime may drag search results.
+A hosted site is available at [https://book-assignment-view.onrender.com/](https://book-assignment-view.onrender.com/) *** hosted server downtime may drag search results.
